@@ -12,13 +12,13 @@ module.exports = function(grunt) {
       },
     },
     jshint: {
-      files: ['Gruntfile.js', 'index.js'],
+      files: ['Gruntfile.js', 'index.js', 'test.js'],
       options: {
         jshintrc: true
       }
     },
     watch: {
-      files: ['Gruntfile.js', 'index.js'],
+      files: ['Gruntfile.js', 'index.js', 'test.js'],
       tasks: ['jshint', 'mochaTest']
     }
   });
