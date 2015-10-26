@@ -1,32 +1,32 @@
 module.exports = function(grunt) {
-  "use strict";
+    "use strict";
 
-  grunt.initConfig({
-    mochaTest: {
-      test: {
-        options: {
-          reporter: 'spec',
-          clearRequireCache: true
+    grunt.initConfig({
+        mochaTest: {
+            test: {
+                options: {
+                    reporter: 'spec',
+                    clearRequireCache: true
+                },
+                src: ['test.js']
+            },
         },
-        src: ['test.js']
-      },
-    },
-    jshint: {
-      files: ['Gruntfile.js', 'index.js', 'test.js'],
-      options: {
-        jshintrc: true
-      }
-    },
-    watch: {
-      files: ['Gruntfile.js', 'index.js', 'test.js'],
-      tasks: ['jshint', 'mochaTest']
-    }
-  });
+        jshint: {
+            files: ['Gruntfile.js', 'index.js', 'test.js'],
+            options: {
+                jshintrc: true
+            }
+        },
+        watch: {
+            files: ['Gruntfile.js', 'index.js', 'test.js'],
+            tasks: ['jshint', 'mochaTest']
+        }
+    });
 
-  grunt.loadNpmTasks('grunt-mocha-test');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-mocha-test');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', ['watch']);
 
 };
