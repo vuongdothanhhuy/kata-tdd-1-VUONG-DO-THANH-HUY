@@ -38,19 +38,16 @@ describe('Kaka', function () {
     });
 
     describe('Number bigger than 1000 is ignored', function () {
-        //
-    });
-
-    describe('Negative number not allowed', function () {
-        //
+        testIt('"1,2,1001" string should return 3', 3, calc.calc('1,2,1001'));
     });
 
     describe('Delimeter with any length', function () {
-        //
+        testIt('"//***\\n1***2***5" string should return 8', 8, calc.calc('//***\n1***2***5'));
     });
 
     describe('Multiple Delimeters', function () {
-        //
+        testIt('"//[,][;]\\n1,2;5" string should return 8', 8, calc.calc('//[,][;]\n1,2;5'));
+        testIt('"//[***][###]\\n1***2&&&5" string should return 8', 8, calc.calc('//[***][###]\n1***2###5'));
     });
 });
 

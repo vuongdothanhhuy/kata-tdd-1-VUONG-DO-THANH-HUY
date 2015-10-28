@@ -38,14 +38,32 @@ var Utilities = {
         'use strict';
 
         expression = expression.substring(2, expression.length).split('\n');
+
         var delimeterPart = expression[0];
         var stringPart = expression[1];
-        var regex = new RegExp(delimeterPart, 'g');
+        var regex;
+        if (delimeterPart.indexOf('][') > -1) {
+            // custom 2 delimeter
+
+            // remove first [ and last ]
+            delimeterPart = delimeterPart.substring(1, delimeterPart.length-1);
+            // split by ][
+            var delimetersArr = delimeterPart.split('][');
+
+            // compose regex with those delimeters
+            for (var i = 0, len = delimetersArr.length; i < len; i++) {
+                delimetersArr[i] = delimetersArr[i].replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+            }
+            regex = new RegExp(delimetersArr.join('|'), 'g');
+        } else {
+            // one delimeter
+            regex = new RegExp(delimeterPart.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&'), 'g');
+        }
 
         var arr = stringPart.split(regex);
 
-        for (var i = 0, len = arr.length; i < len; i++) {
-            arr[i] = parseInt(arr[i], 10) || 0;
+        for (var j = 0, lenj = arr.length; j < lenj; j++) {
+            arr[j] = parseInt(arr[j], 10) || 0;
         }
         return arr;
     },
@@ -60,6 +78,9 @@ var Utilities = {
             if (nums[i] < 0) {
                 negativePool.push(nums[i] + '');
             } else {
+                if (nums[i] > 1000) {
+                    nums[i] = 0;
+                }
                 total += nums[i];
             }
         }
