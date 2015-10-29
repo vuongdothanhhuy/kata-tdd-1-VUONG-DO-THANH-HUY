@@ -15,7 +15,9 @@ Run `npm install` at this path level to install dependencies. Run `npm install -
 
 Run `grunt` to watch changes on Gruntfile.js and index.js and test.js, on change will auto trigger jshint and mocha test.
 
-I've finished the kata calculator. It's written in NodeJS, being under unit test with Mocha. The code apply some practices and design patterns I think appropriate.
+
+
+I've finished the kata calculator. It's written in NodeJS, being under unit test with Mocha. The code apply some practices and design patterns I think appropriate. I try to keep everything as simple as possible and not to introduce too many complexities into it.
 
 
 
