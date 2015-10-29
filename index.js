@@ -24,7 +24,7 @@ var Utilities = (function() {
     // This function is to parse and return regex from the expression.
     // It will handle the difficult case.
 
-    function getNumbersFromComplexDelimeter(expression) {
+    function getComplexDelimeterRegex(expression) {
 
         var delimeterPart = processComplexExpression(expression)[0];
         var regex;
@@ -81,7 +81,7 @@ var Utilities = (function() {
             } else {
                 // if basic fails, try complex
 
-                delimeter = getNumbersFromComplexDelimeter(expression);
+                delimeter = getComplexDelimeterRegex(expression);
 
                 // complex case need processed expression string.
                 expression = processComplexExpression(expression)[1];
