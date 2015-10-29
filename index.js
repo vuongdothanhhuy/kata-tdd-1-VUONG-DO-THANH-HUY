@@ -8,8 +8,7 @@ var Utilities = (function() {
     'use strict';
 
     // This function is to parse and return regex from the expression.
-    // It will detect and handle the simple case.
-    // Difficult case returns false.
+    // It will handle the simple case.
 
     function getDelimeterRegex(expression) {
         // it's either comma or newline, but shouldn't be both
