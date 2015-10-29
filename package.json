@@ -1,0 +1,26 @@
+{
+    "name": "kata-tdd-1-vuong-do-thanh-huy",
+    "version": "1.0.0",
+    "description": "Apiumtech Interview",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Please run Mocha to test.\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vuongdothanhhuy/kata-tdd-1-VUONG-DO-THANH-HUY.git"
+    },
+    "author": "Vuong Do Thanh Huy",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/vuongdothanhhuy/kata-tdd-1-VUONG-DO-THANH-HUY/issues"
+    },
+    "homepage": "https://github.com/vuongdothanhhuy/kata-tdd-1-VUONG-DO-THANH-HUY#readme",
+    "dependencies": {
+        "grunt": "^0.4.5",
+        "grunt-contrib-jshint": "^0.11.3",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-mocha-test": "^0.12.7",
+        "mocha": "^2.3.3"
+    }
+}
