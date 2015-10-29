@@ -4,7 +4,7 @@
     "description": "Apiumtech Interview",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Please run Mocha to test.\" && exit 1"
     },
     "repository": {
         "type": "git",
